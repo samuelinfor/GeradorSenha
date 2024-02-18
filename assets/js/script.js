@@ -24,8 +24,20 @@ linhaChar.oninput = function(){
     password.innerHTML = pass;
     newPass = pass;
 }
+    function copyPass() {
+        let newPass = password.textContent; // Obtenha o texto da senha
+          navigator.clipboard.writeText(newPass).then(function() {
+        console.log('Senha copiada com sucesso!');
+        alert('Senha copiada com sucesso!');
+    }).catch(function(error) {
+        console.error('Erro ao copiar senha:', error);
+        alert('Erro ao copiar senha. Por favor, tente novamente.');
+    });
+}
 
-    function copyPass(){
-        alert("Senha copiada com sucesso!")
+   /* ESSA FUNÇÃO SÓ FUNCIONA EM NAVEGADOR ANTIGO/
+    
+       function copyPass(){
+            alert("Senha copiada com sucesso!")
         navigator.clipboard.writeText(newPass);
-    }
+    } */
